@@ -7,6 +7,7 @@ public abstract class semaphore {
     }
 
     public synchronized void syncWait(){
+    	System.out.println("\nj’entre en section critique");
 	try {
 	    while(valeur<=0){
 		wait();
@@ -16,6 +17,7 @@ public abstract class semaphore {
     }
 
     public synchronized void syncSignal(){
+    	System.out.println("\nje sors de section critique");
 	if(++valeur > 0) notifyAll();
     }
 }
